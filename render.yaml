@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: restaurant-review-analytics
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: review-data
+          property: postgresql://reviewdata_6q3c_user:XT33Adsg8cLUs5vzg6uN7WeV0LxLL1gR@dpg-d0b5336uk2gs73cda890-a/reviewdata_6q3c
