@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        textarea { width: 400px; height: 100px; }
+        input[type="submit"] { padding: 10px 20px; margin-top: 10px; }
+        .result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+
+    <form action="/predict" method="post">
+        <label for="review">Enter your sentence:</label><br>
+        <textarea name="review" required></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+
+    {% if review %}
+        <div class="result">
+            <h2>Input:</h2>
+            <p>{{ review }}</p>
+
+            <h2>Predicted Stars:</h2>
+            <p>{{ stars }}</p>
+
+            <h2>Sentiment Scores:</h2>
+            <pre>{{ scores }}</pre>
+        </div>
+    {% endif %}
+</body>
+</html>
