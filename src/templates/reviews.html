@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Reviews</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-    </style>
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>All Reviews</h1>
-    <a href="/">Back to Sentiment Form</a>
+    <h1>Reviews</h1>
+    <a href="/">Back to Homepage</a>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Review</th>
-                <th>Stars</th>
+                <th>Store Name</th>
+                <th>Review Stars</th>
+                <th>Review Text</th>
             </tr>
         </thead>
         <tbody>
             {% for review in reviews %}
             <tr>
                 <td>{{ review[0] }}</td>
-                <td>{{ review[1] }}</td>
-                <td>{{ review[2] }}</td>
+                <td>{{ review[7] }}</td>
+                <td>{{ review[9] }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <br>
+    <a href="/">Back to Homepage</a>
 </body>
 </html>
