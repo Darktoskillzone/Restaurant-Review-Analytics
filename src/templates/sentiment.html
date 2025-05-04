@@ -22,7 +22,18 @@
             <p>{{ stars }}</p>
 
             <h2>Sentiment Scores:</h2>
-            <pre>{{ scores }}</pre>
+
+            <div style="display: flex; width: 100%; max-width: 400px; height: 30px; border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                <div style="width: {{ (scores.neg * 100) | default(0.0) | round(1) }}%; background-color: #e74c3c;"></div>
+                <div style="width: {{ (scores.neu * 100) | default(0.0) | round(1) }}%; background-color: #f1c40f;"></div>
+                <div style="width: {{ (scores.pos * 100) | default(0.0) | round(1) }}%; background-color: #2ecc71;"></div>
+            </div>
+
+            <p>
+                Negative: {{ (scores.neg * 100) | round(1) }}% | 
+                Neutral: {{ (scores.neu * 100) | round(1) }}% | 
+                Positive: {{ (scores.pos * 100) | round(1) }}%
+            </p>
         </div>
     {% endif %}
     <br>
