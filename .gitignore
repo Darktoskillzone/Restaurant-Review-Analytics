@@ -3,6 +3,8 @@ data_old/
 misc/
 notebooks/
 webscraper/
+utils/
 *.pyc
 *.pyo
 __pycache__/
+/src/.env
