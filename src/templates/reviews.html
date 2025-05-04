@@ -21,6 +21,12 @@
                 <td>{{ review[0] }}</td>
                 <td>{{ review[7] }}</td>
                 <td>{{ review[9] }}</td>
+                <td>
+                    <form action="/sentiment/predict" method="POST">
+                        <input type="hidden" name="review" value="{{ review[9] }}">
+                        <button type="submit" class="analyze-btn">Analyze Sentiment</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
